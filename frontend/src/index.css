@@ -41,7 +41,7 @@
     @apply bg-ink-2/80 border border-white/10 rounded-2xl backdrop-blur;
   }
   .input-base {
-    @apply w-full bg-ink-3 border border-white/15 rounded-2xl px-4 py-4 text-md text-white placeholder-white/30 outline-none focus:border-neon-cyan/70 focus:ring-2 focus:ring-neon-cyan/20 transition-colors;
+    @apply w-full bg-ink-3 border border-white/15 rounded-2xl px-4 py-4 text-base text-white placeholder-white/30 outline-none focus:border-neon-cyan/70 focus:ring-2 focus:ring-neon-cyan/20 transition-colors;
   }
   .neon-text {
     background: linear-gradient(90deg, #ff2d95, #a855f7, #22d3ee);
