@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-ink text-white font-body antialiased;
+  }
+  body {
+    @apply min-h-screen bg-ink;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% -10%, rgba(168, 85, 247, 0.13), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 10%, rgba(34, 211, 238, 0.08), transparent),
+      radial-gradient(ellipse 70% 50% at 50% 110%, rgba(255, 45, 149, 0.1), transparent);
+    background-attachment: fixed;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(168, 85, 247, 0.35);
+    border-radius: 8px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-neon-pink to-neon-purple text-white font-display font-semibold rounded-2xl px-6 py-4 text-lg shadow-glow-pink active:scale-95 transition-transform select-none;
+  }
+  .btn-secondary {
+    @apply bg-ink-3 border border-neon-cyan/40 text-neon-cyan font-display font-semibold rounded-2xl px-6 py-4 text-lg active:scale-95 transition-transform select-none;
+  }
+  .btn-ghost {
+    @apply text-white/60 hover:text-white font-medium rounded-xl px-4 py-2 transition-colors select-none;
+  }
+  .card {
+    @apply bg-ink-2/80 border border-white/10 rounded-2xl backdrop-blur;
+  }
+  .input-base {
+    @apply w-full bg-ink-3 border border-white/15 rounded-2xl px-4 py-4 text-md text-white placeholder-white/30 outline-none focus:border-neon-cyan/70 focus:ring-2 focus:ring-neon-cyan/20 transition-colors;
+  }
+  .neon-text {
+    background: linear-gradient(90deg, #ff2d95, #a855f7, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
