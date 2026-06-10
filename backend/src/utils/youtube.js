@@ -14,12 +14,23 @@ function buildSearchTerm(q) {
   return `${term} karaokê`;
 }
 
+function decodeHtmlEntities(str) {
+  return str
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&#x27;/g, "'")
+    .replace(/&#x2F;/g, '/');
+}
+
 function normalizeItems(rawItems) {
   return (rawItems || [])
     .filter((item) => item && item.id && item.id.videoId)
     .map((item) => ({
       videoId: item.id.videoId,
-      title: item.snippet ? item.snippet.title : '',
+      title: item.snippet ? decodeHtmlEntities(item.snippet.title) : '',
       thumbnail:
         item.snippet && item.snippet.thumbnails
           ? (item.snippet.thumbnails.medium || item.snippet.thumbnails.default || {}).url || ''
